@@ -1,0 +1,86 @@
+.form {
+    background-color: #f2e5ff;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 3rem auto;
+    border: 3px solid #22015a;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #22015a;
+    box-shadow: 12px 12px 0 #723bd1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  
+  .form label {
+    display: block;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: #4c05d0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .form input,
+  .form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background: #e6ddf9;
+    color: #22015a;
+    border: 2px solid #4c05d0;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px #fff;
+  }
+  
+  .form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  
+  .actions button {
+    cursor: pointer;
+    padding: 0.6rem 1.75rem;
+    border: 2px solid #22015a;
+    background-color: #4c05d0;
+    color: #e6ddf9;
+    font-family: 'Pacifico', cursive;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 4px 4px 0 #22015a;
+  }
+  
+  .actions button:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0 #22015a;
+    background-color: #22015a;
+    color: #f2e5ff;
+  }
+  
+  .actions button[type='button'] {
+    background-color: transparent;
+    color: #4c05d0;
+    border: 2px dashed #4c05d0;
+    font-style: italic;
+  }
+  
+  .actions button[type='button']:hover {
+    background-color: #e6ddf9;
+    color: #22015a;
+  }
+  
