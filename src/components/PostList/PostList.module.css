@@ -13,3 +13,19 @@
     max-width: 400px;
     margin-bottom: 1rem;
 }
+
+.noPosts_container {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.noPosts {
+    font-size: 3rem;
+    color: #a8a8a8;
+    font-family: 'Arial', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}

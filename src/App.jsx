@@ -5,8 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
+
 
   const toggleModalHandler = () => {
     setIsModalOpen((prevState) => {
@@ -14,15 +13,10 @@ function App() {
         return !prevState;
       }
 
-      resetStateHandler();
       return !prevState;
     });
   };
 
-  const resetStateHandler = () => {
-    setBody('');
-    setAuthor('');
-  };
 
   return (
     <>
@@ -31,10 +25,6 @@ function App() {
         <PostList
           isPosting={isModalOpen}
           onStopPosting={toggleModalHandler}
-          body={body}
-          author={author}
-          setBody={setBody}
-          setAuthor={setAuthor}
         />
       </main>
     </>
