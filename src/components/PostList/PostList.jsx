@@ -4,11 +4,7 @@ import Post from "../Post/Post";
 import classes from "./PostList.module.css";
 import Modal from "../Modal/Modal";
 
-function PostList() {
-    const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('');
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
+function PostList({ isPosting, onStopPosting, body, author, setBody, setAuthor }) {
     const changeAuthorHandler = (event) => {
         setAuthor(event.target.value);
     };
@@ -19,30 +15,13 @@ function PostList() {
         // console.log('Updated body:', event.target.value);
     };
 
-    const toggleModalHandler = () => {
-        setIsModalOpen((prevState) => {
-            if (!prevState) {
-                return !prevState;
-            }
-
-            resetStateHandler();
-            return !prevState;
-        });
-    };
-
-    const resetStateHandler = () => {
-        setBody('');
-        setAuthor('');
-    };
-
     return (
         <>
-            {isModalOpen && (
-                <Modal onClose={toggleModalHandler}>
-                    <NewPost onBodyChange={changeBodyHandler} onAuthorChange={changeAuthorHandler} onCancel={toggleModalHandler} />
+            {isPosting && (
+                <Modal onClose={onStopPosting}>
+                    <NewPost onBodyChange={changeBodyHandler} onAuthorChange={changeAuthorHandler} onCancel={onStopPosting} />
                 </Modal>
             )}
-            <button onClick={toggleModalHandler}>New Post</button>
             <ul className={classes.postList}>
                 <li>
                     <Post title="Post 1" body={body} author={author} />
