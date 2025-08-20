@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1rem;
   margin-bottom: 2rem;
-  /* border-bottom: 1px solid #ccc; */
+  border-bottom: 1px solid #ccc;
 }
 
 .logo {
@@ -40,11 +40,4 @@
 
 .button:hover {
   background-color: #f0f0f0;
-}
-
-header {
-  align-items: center;
-  padding: 1rem;
-  margin: 0 10rem 4rem;
-  border-bottom: 1px solid #ccc;
 }

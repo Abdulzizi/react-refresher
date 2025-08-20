@@ -22,4 +22,11 @@ body {
   color: #e6ddf9;
 }
 
-
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
