@@ -20,7 +20,7 @@
 }
 
 .post > h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
     margin: 0 0 0.5rem;
@@ -53,3 +53,13 @@
     justify-content: flex-end;
 }
 
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
