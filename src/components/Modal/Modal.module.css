@@ -6,13 +6,53 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
 }
 
 .modal {
   border: none;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   padding: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
+
+  opacity: 0;
+  transform: translateY(-30px) scale(0.95);
+  animation: slideIn 0.3s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
 }

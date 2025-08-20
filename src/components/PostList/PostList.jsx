@@ -4,8 +4,7 @@ import Post from '../Post/Post';
 import classes from "./PostList.module.css";
 import Modal from '../Modal/Modal';
 
-function PostList() {
-    const [isModalOpen, setIsModalOpen] = useState(true);
+function PostList({isModalOpen, modalHandler }) {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('');
@@ -20,10 +19,6 @@ function PostList() {
 
     const authorHandler = (e) => {
         setAuthor(e.target.value);
-    }
-
-    const modalHandler = () => {
-        setIsModalOpen(!isModalOpen);
     }
 
     return (

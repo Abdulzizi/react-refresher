@@ -17,6 +17,10 @@ function NewPost({onTitleChange, onBodyChange, onAuthorChange}) {
                 <label htmlFor="body">Text</label>
                 <textarea id="body" required rows={3} onChange={onBodyChange} />
             </p>
+
+            <div className={classes.actions}>
+                <button>Create it</button>
+            </div>
         </form>
     );
 }
