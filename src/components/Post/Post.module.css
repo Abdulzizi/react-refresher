@@ -1,66 +1,64 @@
 .post {
-    background-color: #f2e5ff;
-    color: #22015a;
-    padding: 1rem;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
-    margin: 0;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    z-index: 1;
-    box-shadow: 4px 4px 0 #22015a;
-    border-radius: 6px;
-    animation: animate-in 1s ease-out forwards;
+  background: linear-gradient(135deg, #f8f3ff, #f2e5ff);
+  color: #22015a;
+  padding: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(34, 1, 90, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: animate-in 0.8s ease-out forwards;
 }
 
 .post:hover {
-    transform: translateY(-4px);
-    box-shadow: 8px 8px 0 #22015a;
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(34, 1, 90, 0.2);
 }
 
 .post > h1 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0 0 0.5rem;
-    background: #4c05d0;
-    color: #e6ddf9;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #5a17d8, #34036c);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .post > p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  color: #2d1b4e;
 }
 
 .author {
-    font-size: 0.85rem;
-    font-style: italic;
-    font-weight: 600;
-    color: #4c05d0;
-    background: #e6ddf9;
-    padding: 0.25rem 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    display: flex;
-    justify-content: flex-end;
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #34036c;
+  background: rgba(92, 46, 175, 0.1);
+  padding: 0.3rem 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 50px;
+  align-self: flex-end;
 }
 
 @keyframes animate-in {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1rem) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
