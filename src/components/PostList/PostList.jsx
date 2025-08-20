@@ -5,12 +5,12 @@ import classes from "./PostList.module.css";
 import Modal from '../Modal/Modal';
 
 function PostList() {
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('');
-
+    
     const titleHandler = (e) => {
-        // console.log(e.target.value);
         setTitle(e.target.value);
     }
 
@@ -22,11 +22,17 @@ function PostList() {
         setAuthor(e.target.value);
     }
 
+    const modalHandler = () => {
+        setIsModalOpen(!isModalOpen);
+    }
+
     return (
         <>
-            <Modal>
-                <NewPost onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
-            </Modal>
+            {isModalOpen && (
+                <Modal onModalClick={modalHandler} >
+                    <NewPost onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
+                </Modal>
+            )}
             <ul className={classes.postList}>
                 <Post title={title} body={body} author={author} />
                 <Post title="Test Title 2" body="Ini adalah body text 2" author="Ahmad meredi" />
