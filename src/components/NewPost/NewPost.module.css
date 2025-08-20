@@ -1,17 +1,9 @@
 .form {
   background: linear-gradient(135deg, #6233b9, #4a1d8c);
   padding: 2rem;
-  width: 22rem;
-  margin: 2rem auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 25rem;
   color: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
 .form label {
@@ -57,12 +49,16 @@
   font: inherit;
   padding: 0.6rem 1.6rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #5d0be2, #3d0aa3);
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: background 0.3s ease, transform 0.15s ease;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .actions button:hover {
