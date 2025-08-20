@@ -1,13 +1,31 @@
+import { useState } from 'react';
 import NewPost from '../NewPost/NewPost';
 import Post from '../Post/Post';
 import classes from "./PostList.module.css";
 
 function PostList() {
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [author, setAuthor] = useState('');
+
+    const titleHandler = (e) => {
+        // console.log(e.target.value);
+        setTitle(e.target.value);
+    }
+
+    const bodyHandler = (e) => {
+        setBody(e.target.value);
+    }
+
+    const authorHandler = (e) => {
+        setAuthor(e.target.value);
+    }
+
     return (
         <>
-            <NewPost />
+            <NewPost onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
             <ul className={classes.postList}>
-                <Post title="Test Title 1" body="Ini adalah body text" author="Abdul Jawad" />
+                <Post title={title} body={body} author={author} />
                 <Post title="Test Title 2" body="Ini adalah body text 2" author="Ahmad meredi" />
             </ul>
         </>

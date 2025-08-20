@@ -1,19 +1,21 @@
 import classes from './NewPost.module.css';
 
-function NewPost() {
+function NewPost({onTitleChange, onBodyChange, onAuthorChange}) {
+
     return (
         <form className={classes.form}>
             <p>
                 <label htmlFor="title">Title</label>
-                <input type="text" id="title" required />
+                <input type="text" id="title" required onChange={onTitleChange} />
+                {/* <p>{title}</p> */}
             </p>
             <p>
                 <label htmlFor="name">Your name</label>
-                <input type="text" id="name" required />
+                <input type="text" id="name" required onChange={onAuthorChange} />
             </p>
             <p>
                 <label htmlFor="body">Text</label>
-                <textarea id="body" required rows={3} />
+                <textarea id="body" required rows={3} onChange={onBodyChange} />
             </p>
         </form>
     );
