@@ -1,6 +1,6 @@
 import classes from './NewPost.module.css';
 
-function NewPost({onTitleChange, onBodyChange, onAuthorChange}) {
+function NewPost({onTitleChange, onBodyChange, onAuthorChange, cancelHandler}) {
 
     return (
         <form className={classes.form}>
@@ -19,6 +19,7 @@ function NewPost({onTitleChange, onBodyChange, onAuthorChange}) {
             </p>
 
             <div className={classes.actions}>
+                <button onClick={cancelHandler} id='Cancel' type='button'>Cancel</button>
                 <button>Create it</button>
             </div>
         </form>

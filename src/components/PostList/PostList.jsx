@@ -25,7 +25,7 @@ function PostList({isModalOpen, modalHandler }) {
         <>
             {isModalOpen && (
                 <Modal onModalClick={modalHandler} >
-                    <NewPost onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
+                    <NewPost cancelHandler={modalHandler} onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
                 </Modal>
             )}
             <ul className={classes.postList}>

@@ -79,3 +79,16 @@
   color: #fff;
   border-color: #b19cff;
 }
+
+.actions button[type='button'][id='Cancel'] {
+  background: rgba(240, 65, 65, 0.25);
+  color: #f04141;
+  border-color: #f04141;
+}
+
+.actions button[type='button'][id='Cancel']:hover {
+  background: rgba(240, 65, 65, 0.5);
+  color: #f04141;
+  border-color: #f04141;
+}
+
