@@ -92,3 +92,11 @@
   border-color: #f04141;
 }
 
+.actions button:disabled {
+  background: #aaa;
+  color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.5;
+}

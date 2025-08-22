@@ -2,14 +2,25 @@ import NewPost from '../NewPost/NewPost';
 import Post from '../Post/Post';
 import classes from "./PostList.module.css";
 import Modal from '../Modal/Modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function PostList({isModalOpen, modalHandler }) {
     const [posts, setPosts] = useState([]);
 
     const addPostHandler = (post) => {
-        setPosts((prevPosts) => [...prevPosts, post]);
-    }
+        setPosts((prevPosts) => {
+            const updatedPosts = [...prevPosts, post];
+            localStorage.setItem("posts", JSON.stringify(updatedPosts));
+            return updatedPosts;
+        });
+    };
+
+    useEffect(() => {
+        const storedPosts = localStorage.getItem("posts");
+        if (storedPosts) {
+            setPosts(JSON.parse(storedPosts));
+        }
+    }, []);
 
     return (
         <>

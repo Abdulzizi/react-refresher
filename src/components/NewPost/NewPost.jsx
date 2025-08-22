@@ -28,7 +28,7 @@ function NewPost({ cancelHandler, onPostAdded }) {
             author: author
         }
 
-        console.log('postData', postData);   
+        // console.log('postData', postData);   
 
         if (onPostAdded) {
             onPostAdded(postData);
@@ -54,7 +54,7 @@ function NewPost({ cancelHandler, onPostAdded }) {
 
             <div className={classes.actions}>
                 <button onClick={cancelHandler} id='Cancel' type='button'>Cancel</button>
-                <button>Create it</button>
+                <button disabled={!title || !author || !body}>Create it</button>
             </div>
         </form>
     );
