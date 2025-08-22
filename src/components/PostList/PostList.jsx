@@ -1,37 +1,39 @@
-import { useState } from 'react';
 import NewPost from '../NewPost/NewPost';
 import Post from '../Post/Post';
 import classes from "./PostList.module.css";
 import Modal from '../Modal/Modal';
+import { useState } from 'react';
 
 function PostList({isModalOpen, modalHandler }) {
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('');
-    
-    const titleHandler = (e) => {
-        setTitle(e.target.value);
-    }
+    const [posts, setPosts] = useState([]);
 
-    const bodyHandler = (e) => {
-        setBody(e.target.value);
-    }
-
-    const authorHandler = (e) => {
-        setAuthor(e.target.value);
+    const addPostHandler = (post) => {
+        setPosts((prevPosts) => [...prevPosts, post]);
     }
 
     return (
         <>
             {isModalOpen && (
                 <Modal onModalClick={modalHandler} >
-                    <NewPost cancelHandler={modalHandler} onTitleChange={titleHandler} onBodyChange={bodyHandler} onAuthorChange={authorHandler} />
+                    <NewPost onPostAdded={addPostHandler} cancelHandler={modalHandler} />
                 </Modal>
             )}
-            <ul className={classes.postList}>
-                <Post title={title} body={body} author={author} />
-                <Post title="Test Title 2" body="Ini adalah body text 2" author="Ahmad meredi" />
-            </ul>
+            {posts.length > 0 ? (
+                <ul className={classes.postList}>
+                    {
+                        posts.map((post, index) => (
+                            <Post
+                                key={index}
+                                title={post.title}
+                                body={post.body}
+                                author={post.author}
+                            />
+                        ))
+                    }
+                </ul>
+            ) : (
+                <p className={classes.noPosts}>No posts yet! Create one!</p>
+            )}
         </>
     )
 }
